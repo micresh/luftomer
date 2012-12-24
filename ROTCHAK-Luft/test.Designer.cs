@@ -45,6 +45,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.btncheck = new System.Windows.Forms.Button();
             this.btnfor = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -181,11 +182,20 @@
             this.btnfor.TabIndex = 4;
             this.btnfor.UseVisualStyleBackColor = true;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(24, 157);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 134);
+            this.listBox1.TabIndex = 5;
+            // 
             // test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 216);
+            this.ClientSize = new System.Drawing.Size(703, 302);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnfor);
             this.Controls.Add(this.btncheck);
             this.Controls.Add(this.comboBox2);
@@ -227,5 +237,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button btncheck;
         private System.Windows.Forms.Button btnfor;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

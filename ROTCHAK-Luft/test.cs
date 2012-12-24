@@ -18,12 +18,17 @@ namespace ROTCHAK_Luft
 
         private void btncheck_Click(object sender, EventArgs e)
         {
-            string s1, s2;
-            s1 = comboBox1.SelectedItem.ToString();
-            s2 = comboBox2.SelectedItem.ToString();
-            if (s1 == "Подключен" && s2 == "Подключен")
+            //string s1, s2;
+            //s1 = comboBox1.SelectedItem.ToString();
+            //s2 = comboBox2.SelectedItem.ToString();
+            //if (s1 == "Подключен" && s2 == "Подключен")
+            //{
+            //    btnfor.Enabled = true;
+            //}
+            string[] ports = sensors.PortList();
+            for (int i = 0; i < ports.Length; i++)
             {
-                btnfor.Enabled = true;
+                listBox1.Items.Add(ports[i]);
             }
         }
     }
