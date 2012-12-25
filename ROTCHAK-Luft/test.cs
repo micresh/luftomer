@@ -25,11 +25,11 @@ namespace ROTCHAK_Luft
             //{
             //    btnfor.Enabled = true;
             //}
-            string[] ports = sensors.PortList();
-            for (int i = 0; i < ports.Length; i++)
-            {
-                listBox1.Items.Add(ports[i]);
-            }
+            //string[] ports = sensors.PortList();
+            //for (int i = 0; i < ports.Length; i++)
+            //{
+            //    listBox1.Items.Add(ports[i]);
+            //}
         }
     }
 }
