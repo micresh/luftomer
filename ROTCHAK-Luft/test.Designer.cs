@@ -46,6 +46,7 @@
             this.btncheck = new System.Windows.Forms.Button();
             this.btnfor = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -190,11 +191,19 @@
             this.listBox1.Size = new System.Drawing.Size(120, 134);
             this.listBox1.TabIndex = 5;
             // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(175, 157);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 6;
+            // 
             // test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 302);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnfor);
             this.Controls.Add(this.btncheck);
@@ -238,5 +247,6 @@
         private System.Windows.Forms.Button btncheck;
         private System.Windows.Forms.Button btnfor;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }

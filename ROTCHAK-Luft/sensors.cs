@@ -12,16 +12,26 @@ namespace ROTCHAK_Luft
         {
             
                 SerialPort port = new SerialPort(ports, 115200, Parity.None,8,StopBits.One);
+                port.ReadTimeout = 500;
+                port.WriteTimeout = 500;
+                try
+                {
                     port.Open();
-                    byte[] comm = { 170, 1, 0, 0,0,1,0,4,0};
+                    byte[] comm = { 170, 1, 0, 0, 0, 1, 0, 4, 0 };
                     port.Write(comm, 0, comm.Length);
                     byte[] answ = new byte[9];
                     port.Read(answ, 0, answ.Length);
                     if ((answ[7] == 1) && (answ[7] == 1))
                     {
+                        port.Close();
                         return true;
                     }
-                          
+                }
+                catch
+                {
+                    port.Close();
+                    return false;
+                }
             return false;
         }
         private static string[] PortList() // Здесь мы получаем все подключенные СОМ-порты
