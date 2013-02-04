@@ -30,7 +30,7 @@ namespace ROTCHAK_Luft
             //{
             //    listBox1.Items.Add(ports[i]);
             //}
-            textBox6.Text = sensors.GetBPPportname();
+          //  textBox6.Text = sensors.GetBPPportname();
         }
     }
 }

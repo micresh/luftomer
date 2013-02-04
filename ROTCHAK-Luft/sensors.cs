@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+//using System.Linq;
 using System.Text;
 using System.IO.Ports;
 
@@ -8,7 +8,8 @@ namespace ROTCHAK_Luft
 {
     class sensors
     {
-        private static bool ConnOpen(string ports) // в этой процедуре мы проверяем БПП это или не БПП
+        public static string indata;
+        private static bool ConnOpen(string ports) 
         {
             
                 SerialPort port = new SerialPort(ports, 115200, Parity.None,8,StopBits.One);
@@ -17,40 +18,108 @@ namespace ROTCHAK_Luft
                 try
                 {
                     port.Open();
-                    byte[] comm = { 170, 1, 0, 0, 0, 1, 0, 4, 0 };
-                    port.Write(comm, 0, comm.Length);
-                    byte[] answ = new byte[9];
-                    port.Read(answ, 0, answ.Length);
-                    if ((answ[7] == 1) && (answ[7] == 1))
-                    {
-                        port.Close();
-                        return true;
-                    }
+                }
+                catch
+                {
+                    return false;
+                }
+                    
+            return true;
+        }
+        public static string[] PortList() // Здесь мы получаем все подключенные СОМ-порты
+        {
+            string[] portnames = SerialPort.GetPortNames();
+
+            return portnames;
+        }
+
+        public static string ReadString(string ports)
+        {
+            SerialPort port = new SerialPort(ports, 115200, Parity.None, 8, StopBits.One);
+            port.ReadTimeout = 1000;
+            port.WriteTimeout = 1500;
+            string s1="";
+            if (port.IsOpen)
+            {
+
+                s1 = port.ReadLine();
+            }
+            else
+            {
+                port.Open();
+                try
+                {
+                    s1 = port.ReadLine();
+                }
+                catch (TimeoutException)
+                { }
+            }
+            return s1;
+        }
+        public static byte[] ReadData(SerialPort port,int start, int values)
+        {
+            byte[] buffer = new byte[values];
+            //SerialPort port = new SerialPort(ports, 115200, Parity.None, 8, StopBits.One);
+            
+            port.ReadTimeout = 1500;
+            port.WriteTimeout = 1500;
+            if (port.IsOpen)
+            {
+
+                port.Read(buffer, 0, start);
+                port.Close();
+            }
+            else
+            {
+                port.Open();
+                try
+                {
+                    port.Read(buffer, 0, start);
+                    port.Close();
+                }
+                catch (TimeoutException)
+                {
+                    buffer = null;
+                    port.Close();
+                }
+            }
+            return buffer;
+        }
+        public static bool WriteData(byte[] buff,SerialPort port)
+        {
+          //  SerialPort port = new SerialPort(ports, 115200, Parity.None, 8, StopBits.One);
+          //  port.ReadTimeout = 1500;
+          //  port.WriteTimeout = 1500;
+            if (port.IsOpen)
+            {
+                try
+                {
+                    port.Write(buff, 0, 8);
+                    port.Close();
+                    return true;
                 }
                 catch
                 {
                     port.Close();
                     return false;
                 }
-            return false;
-        }
-        private static string[] PortList() // Здесь мы получаем все подключенные СОМ-порты
-        {
-            string[] portnames = SerialPort.GetPortNames();
-
-            return portnames;
-        }
-        public static string GetBPPportname() // здесь мы берем имя порта, с которым мы будем работать (к которому подключено БПП)
-        {
-            string[] ports = PortList();
-        for (int i = 0; i < ports.Length; i++)
-            {                
-                if (ConnOpen(ports[i]))
+            }
+            else
+            {
+                try
                 {
-                    return ports[i];
+                    port.Open();
+                    port.Write(buff, 0, 8);
+                    port.Close();
                 }
+                catch
+                {
+                    buff = null;
+                    return false;
                 }
-        return "nothing";
-        }
+                return true;
+            }
+         }
+        
     }
 }
