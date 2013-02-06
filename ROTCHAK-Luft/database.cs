@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace ROTCHAK_Luft
 {
@@ -14,6 +15,19 @@ namespace ROTCHAK_Luft
         public database()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            //string[] la = databaseop.ReadData("1.xml", "leftangle");
+            //string[] vin = databaseop.ReadData("1.xml", "vin");
+            DataSet data = new DataSet();
+            //data.Tables[0].NewRow = la[1];
+            data.ReadXml("1.xml");
+            dataGridView1.DataSource = data.Tables[0];
+            dataGridView1.Update();
+            
         }
     }
 }

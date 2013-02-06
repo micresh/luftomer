@@ -52,6 +52,7 @@
     <Compile Include="database.Designer.cs">
       <DependentUpon>database.cs</DependentUpon>
     </Compile>
+    <Compile Include="databaseop.cs" />
     <Compile Include="mainform.cs">
       <SubType>Form</SubType>
     </Compile>
