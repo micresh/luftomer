@@ -22,3 +22,15 @@ C:\Projects\luft\ROTCHAK-Luft\obj\x86\Debug\ROTCHAK_Luft.Properties.Resources.re
 C:\Projects\luft\ROTCHAK-Luft\obj\x86\Debug\ROTCHAK_Luft.test.resources
 C:\Projects\luft\ROTCHAK-Luft\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Projects\luft\ROTCHAK-Luft\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\projects\lufomer\ROTCHAK-Luft\obj\x86\Debug\ROTCHAK-Luft.exe
+C:\projects\lufomer\ROTCHAK-Luft\obj\x86\Debug\ROTCHAK-Luft.pdb
+C:\projects\lufomer\ROTCHAK-Luft\bin\Debug\ROTCHAK-Luft.exe
+C:\projects\lufomer\ROTCHAK-Luft\bin\Debug\ROTCHAK-Luft.pdb
+C:\projects\lufomer\ROTCHAK-Luft\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\projects\lufomer\ROTCHAK-Luft\obj\x86\Debug\ROTCHAK_Luft.database.resources
+C:\projects\lufomer\ROTCHAK-Luft\obj\x86\Debug\ROTCHAK_Luft.mainform.resources
+C:\projects\lufomer\ROTCHAK-Luft\obj\x86\Debug\ROTCHAK_Luft.preferences.resources
+C:\projects\lufomer\ROTCHAK-Luft\obj\x86\Debug\ROTCHAK_Luft.Properties.Resources.resources
+C:\projects\lufomer\ROTCHAK-Luft\obj\x86\Debug\ROTCHAK_Luft.test.resources
+C:\projects\lufomer\ROTCHAK-Luft\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\projects\lufomer\ROTCHAK-Luft\obj\x86\Debug\GenerateResource.write.1.tlog

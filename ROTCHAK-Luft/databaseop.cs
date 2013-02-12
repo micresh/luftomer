@@ -17,7 +17,7 @@ namespace ROTCHAK_Luft
             xtw.WriteEndDocument();
             xtw.Close();
         }  
-        public static void WriteData (string filepath, string vin, string leftangle,string number)
+        public static void WriteData (string filepath,string number, string vin, string regnumber, string pts, string svid)
         {
             XmlDocument basedoc = new XmlDocument();
             if (!File.Exists(filepath))
@@ -27,8 +27,10 @@ namespace ROTCHAK_Luft
             basedoc.Load(filepath);
             XmlElement wr = basedoc.CreateElement("izmerenie");
             wr.SetAttribute("номер", number);
-            wr.SetAttribute("вин", vin);
-            wr.SetAttribute("расхождение_угла", leftangle);
+            wr.SetAttribute("VIN", vin);
+            wr.SetAttribute("регистрационный_номер", regnumber);
+            wr.SetAttribute("номер_серия_ПТС", pts);
+            wr.SetAttribute("номер_серия_свидетельства_регистрации", svid);
             basedoc.DocumentElement.AppendChild(wr);
             basedoc.Save(filepath);
             //XmlWriter writer = null;

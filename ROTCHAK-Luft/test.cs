@@ -53,7 +53,7 @@ namespace ROTCHAK_Luft
             {
                 number = 0;
             }
-            databaseop.WriteData("1.xml", "1521531","15.23",Convert.ToString(number+1));
+          //  databaseop.WriteData("1.xml", "1521531","15.23",Convert.ToString(number+1));
           
         }
     }
